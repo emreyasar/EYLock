@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.emreyasar.eylock.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.emreyasar.eylock.dashboard.DashboardFragment"
+        android:label="DashboardFragment"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_dashboardFragment_to_lockDetailFragment"
+            app:destination="@id/lockDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lockDetailFragment"
+        android:name="com.emreyasar.eylock.lockdetail.LockDetailFragment"
+        android:label="LockDetailFragment"
+        tools:layout="@layout/fragment_lock_detail" >
+        <action
+            android:id="@+id/action_lockDetailFragment_to_eventListFragment"
+            app:destination="@id/eventListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/eventListFragment"
+        android:name="com.emreyasar.eylock.eventlist.EventListFragment"
+        android:label="EventListFragment"
+        tools:layout="@layout/fragment_event_list" />
+
+</navigation>

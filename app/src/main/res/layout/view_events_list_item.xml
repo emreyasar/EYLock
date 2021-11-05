@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/event_list_vertical_line"
+        android:layout_width="2dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/event_list_vertical_line_dot"
+        app:layout_constraintEnd_toEndOf="@id/event_list_vertical_line_dot"
+        app:srcCompat="@drawable/shape_vertical_rectangle"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/event_list_vertical_line_dot"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/shape_circle" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/event_list_event_time"
+        style="@style/TextStyle.14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        app:layout_constraintTop_toTopOf="@id/event_list_vertical_line_dot"
+        app:layout_constraintBottom_toBottomOf="@id/event_list_vertical_line_dot"
+        app:layout_constraintStart_toEndOf="@id/event_list_vertical_line_dot"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="09:20 AM" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/event_list_event_type"
+        style="@style/TextStyle.Bold.14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        app:layout_constraintTop_toBottomOf="@id/event_list_event_time"
+        app:layout_constraintStart_toStartOf="@id/event_list_event_time"
+        app:layout_constraintEnd_toEndOf="@id/event_list_event_time"
+        tools:text="Entrance" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/event_list_user_img"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="@id/event_list_event_type"
+        app:layout_constraintTop_toBottomOf="@id/event_list_event_type"
+        tools:srcCompat="@tools:sample/avatars"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/event_list_user_name"
+        style="@style/TextStyle.14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toTopOf="@id/event_list_user_img"
+        app:layout_constraintBottom_toBottomOf="@id/event_list_user_img"
+        app:layout_constraintStart_toEndOf="@id/event_list_user_img"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Lorem ipsum" />
+
+    <Space
+        android:id="@+id/event_list_bottom_space"
+        android:layout_width="wrap_content"
+        android:layout_height="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/event_list_user_name"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EYLock</string>
+    <string name="text_email">E-mail</string>
+    <string name="text_email_hint">E-mail</string>
+    <string name="text_password_hint">Password</string>
+    <string name="text_login">Login</string>
+    <string name="text_show_lock_event_list">Show Lock Event List</string>
+</resources>

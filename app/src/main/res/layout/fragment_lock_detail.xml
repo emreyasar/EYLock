@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.ncorti.slidetoact.SlideToActView
+        android:id="@+id/lock_detail_slider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="@dimen/defaultPadding"
+        android:layout_marginEnd="@dimen/defaultPadding"
+        app:text_appearance="@style/TextStyle"
+        app:slider_icon="@drawable/ic_lock_closed_icon"
+        app:complete_icon="@drawable/ic_lock_open_icon"
+        app:outer_color="@color/colorPrimaryDark"
+        app:text="Slide to unlock the door" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/lock_detail_show_event_list_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/text_show_lock_event_list"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
