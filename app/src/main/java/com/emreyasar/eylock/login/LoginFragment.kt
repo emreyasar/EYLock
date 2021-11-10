@@ -30,7 +30,11 @@ class LoginFragment: Fragment(), LoginContract.View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.fragmentLoginButton.setOnClickListener { view: View ->
-            view.findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
+            if (binding.fragmentLoginEmailInput.text.toString() == "admin") {
+                view.findNavController().navigate(R.id.action_loginFragment_to_adminHomeFragment)
+            } else {
+                view.findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
+            }
         }
 
         return binding.root
