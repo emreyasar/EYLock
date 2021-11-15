@@ -4,9 +4,7 @@ interface BaseMVPPresenter<V: BaseView> {
 
     fun onDestroy()
 
-    fun onAttach(view: V?)
-
-    fun onDetach()
+    fun onViewCreated(view: V?)
 
     fun getView(): V?
 

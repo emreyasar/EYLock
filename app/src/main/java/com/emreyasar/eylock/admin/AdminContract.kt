@@ -14,5 +14,6 @@ interface AdminContract {
     }
 
     interface View : BaseView {
+        fun newUserAdded(result: Boolean)
     }
 }

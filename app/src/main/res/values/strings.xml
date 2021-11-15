@@ -9,4 +9,5 @@
     <string name="add_new_lock">Add New Lock</string>
     <string name="label_save">Save</string>
     <string name="hint_name_surname">Name surname</string>
+    <string name="text_admin_login">Admin Login</string>
 </resources>

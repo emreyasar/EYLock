@@ -12,5 +12,6 @@ class AdminNewUserPresenter<V: AdminContract.View> @Inject internal constructor(
         GlobalScope.launch {
             userRepository.insertUser(email, name)
         }
+        getView()?.newUserAdded(true)
     }
 }

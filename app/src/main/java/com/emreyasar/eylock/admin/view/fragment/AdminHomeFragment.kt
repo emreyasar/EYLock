@@ -43,4 +43,8 @@ class AdminHomeFragment: Fragment(), AdminContract.View {
         return binding.root
     }
 
+    override fun newUserAdded(result: Boolean) {
+
+    }
+
 }

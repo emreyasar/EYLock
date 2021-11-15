@@ -29,7 +29,7 @@
             android:inputType="textEmailAddress" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/fragment_new_user_password_input"
+            android:id="@+id/fragment_new_user_name_input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/defaultPadding"
