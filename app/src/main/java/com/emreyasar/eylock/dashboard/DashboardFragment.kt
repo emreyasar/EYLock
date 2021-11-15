@@ -9,19 +9,23 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emreyasar.eylock.R
 import com.emreyasar.eylock.databinding.FragmentDashboardBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class DashboardFragment: Fragment(), DashboardContract.View {
 
-    private lateinit var presenter: DashboardContract.Presenter
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var adapter: LockListRecyclerViewAdapter
 
     private var _binding: FragmentDashboardBinding? = null
     private val binding get() = _binding!!
 
+    @Inject
+    internal lateinit var presenter: DashboardContract.Presenter<DashboardContract.View>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setPresenter(DashboardPresenter(this))
     }
 
     override fun onCreateView(
@@ -29,7 +33,6 @@ class DashboardFragment: Fragment(), DashboardContract.View {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        presenter.onViewCreated()
         _binding = FragmentDashboardBinding.inflate(inflater, container, false)
 
         linearLayoutManager = LinearLayoutManager(requireContext())
@@ -47,14 +50,6 @@ class DashboardFragment: Fragment(), DashboardContract.View {
     override fun onDestroy() {
         presenter.onDestroy()
         super.onDestroy()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
-
-    override fun setPresenter(presenter: DashboardContract.Presenter) {
-        this.presenter = presenter
     }
 
 

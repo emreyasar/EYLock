@@ -1,16 +1,7 @@
 package com.emreyasar.eylock.login
 
-class LoginPresenter(view: LoginContract.View) : LoginContract.Presenter {
+import javax.inject.Inject
 
-    private var view: LoginContract.View? = view
-
-    override fun onViewCreated() {
-        // do nothing
-    }
-
-    override fun onDestroy() {
-        this.view = null
-    }
-
+class LoginPresenter<V: LoginContract.View> @Inject internal constructor() : LoginContract.Presenter<V>() {
 
 }

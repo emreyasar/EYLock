@@ -1,20 +1,11 @@
 package com.emreyasar.eylock.dashboard
 
-class DashboardPresenter(view: DashboardContract.View) : DashboardContract.Presenter {
+import javax.inject.Inject
 
-    private var view: DashboardContract.View? = view
-
-    override fun onViewCreated() {
-        // do nothing
-    }
+class DashboardPresenter<V: DashboardContract.View> @Inject internal constructor() : DashboardContract.Presenter<V>() {
 
     override fun onLockItemClicked() {
-        this.view?.onLockItemClicked()
+        getView()?.onLockItemClicked()
     }
-
-    override fun onDestroy() {
-        this.view = null
-    }
-
 
 }

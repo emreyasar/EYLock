@@ -5,12 +5,11 @@ import com.emreyasar.eylock.BaseView
 
 interface DashboardContract {
 
-    interface Presenter : BasePresenter {
-        fun onViewCreated()
-        fun onLockItemClicked()
+    abstract class Presenter<V: View> : BasePresenter<V>() {
+        abstract fun onLockItemClicked()
     }
 
-    interface View : BaseView<Presenter> {
+    interface View : BaseView {
         fun onLockItemClicked()
     }
 }

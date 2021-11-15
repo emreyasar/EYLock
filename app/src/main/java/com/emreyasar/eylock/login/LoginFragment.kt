@@ -8,17 +8,20 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.emreyasar.eylock.R
 import com.emreyasar.eylock.databinding.FragmentLoginBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LoginFragment: Fragment(), LoginContract.View {
 
-    private lateinit var presenter: LoginContract.Presenter
+    @Inject
+    internal lateinit var presenter: LoginContract.Presenter<LoginContract.View>
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setPresenter(LoginPresenter(this))
     }
 
     override fun onCreateView(
@@ -26,7 +29,6 @@ class LoginFragment: Fragment(), LoginContract.View {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        presenter.onViewCreated()
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.fragmentLoginButton.setOnClickListener { view: View ->
@@ -43,14 +45,6 @@ class LoginFragment: Fragment(), LoginContract.View {
     override fun onDestroy() {
         presenter.onDestroy()
         super.onDestroy()
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
-
-    override fun setPresenter(presenter: LoginContract.Presenter) {
-        this.presenter = presenter
     }
 
 

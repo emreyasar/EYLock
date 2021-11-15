@@ -46,8 +46,17 @@
         tools:layout="@layout/fragment_event_list" />
     <fragment
         android:id="@+id/adminHomeFragment"
-        android:name="com.emreyasar.eylock.admin.AdminHomeFragment"
+        android:name="com.emreyasar.eylock.admin.view.fragment.AdminHomeFragment"
         android:label="AdminHomeFragment"
-        tools:layout="@layout/fragment_admin_home"/>
+        tools:layout="@layout/fragment_admin_home">
+        <action
+            android:id="@+id/action_adminHomeFragment_to_addNewUserFragment"
+            app:destination="@id/addNewUserFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewUserFragment"
+        android:name="com.emreyasar.eylock.admin.view.fragment.AddNewUserFragment"
+        android:label="AddNewUserFragment"
+        tools:layout="@layout/fragment_add_new_user"/>
 
 </navigation>

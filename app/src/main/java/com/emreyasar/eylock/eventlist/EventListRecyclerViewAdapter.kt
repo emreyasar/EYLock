@@ -3,7 +3,7 @@ package com.emreyasar.eylock.eventlist
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-class EventListRecyclerViewAdapter(val presenter: EventListContract.Presenter) :
+class EventListRecyclerViewAdapter(val presenter: EventListContract.Presenter<EventListContract.View>) :
     RecyclerView.Adapter<EventListRecyclerViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventListRecyclerViewHolder {

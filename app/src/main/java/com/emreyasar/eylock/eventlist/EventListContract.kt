@@ -5,11 +5,10 @@ import com.emreyasar.eylock.BaseView
 
 interface EventListContract {
 
-    interface Presenter : BasePresenter {
-        fun onViewCreated()
+    abstract class Presenter<V: View> : BasePresenter<V>() {
     }
 
-    interface View : BaseView<Presenter> {
+    interface View : BaseView {
 
     }
 }

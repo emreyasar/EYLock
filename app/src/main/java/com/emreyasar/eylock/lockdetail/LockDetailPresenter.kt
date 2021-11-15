@@ -1,16 +1,8 @@
 package com.emreyasar.eylock.lockdetail
 
-class LockDetailPresenter(view: LockDetailContract.View) : LockDetailContract.Presenter {
+import javax.inject.Inject
 
-    private var view: LockDetailContract.View? = view
-
-    override fun onViewCreated() {
-        // do nothing
-    }
-
-    override fun onDestroy() {
-        this.view = null
-    }
+class LockDetailPresenter<V: LockDetailContract.View> @Inject internal constructor() : LockDetailContract.Presenter<V>() {
 
 
 }

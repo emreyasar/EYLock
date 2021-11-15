@@ -10,10 +10,15 @@ import com.emreyasar.eylock.R
 import com.emreyasar.eylock.dashboard.LockListRecyclerViewAdapter
 import com.emreyasar.eylock.databinding.FragmentEventListBinding
 import com.emreyasar.eylock.databinding.FragmentLockDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class EventListFragment: Fragment(), EventListContract.View {
 
-    private lateinit var presenter: EventListContract.Presenter
+    @Inject
+    internal lateinit var presenter: EventListContract.Presenter<EventListContract.View>
+
     private lateinit var linearLayoutManager: LinearLayoutManager
     private lateinit var adapter: EventListRecyclerViewAdapter
 
@@ -22,7 +27,6 @@ class EventListFragment: Fragment(), EventListContract.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setPresenter(EventListPresenter(this))
     }
 
     override fun onCreateView(
@@ -30,7 +34,6 @@ class EventListFragment: Fragment(), EventListContract.View {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        presenter.onViewCreated()
         _binding = FragmentEventListBinding.inflate(inflater, container, false)
 
         linearLayoutManager = LinearLayoutManager(requireContext())
@@ -45,14 +48,5 @@ class EventListFragment: Fragment(), EventListContract.View {
         presenter.onDestroy()
         super.onDestroy()
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
-
-    override fun setPresenter(presenter: EventListContract.Presenter) {
-        this.presenter = presenter
-    }
-
 
 }

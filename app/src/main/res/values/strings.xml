@@ -7,4 +7,6 @@
     <string name="text_show_lock_event_list">Show Lock Event List</string>
     <string name="add_new_user">Add New User</string>
     <string name="add_new_lock">Add New Lock</string>
+    <string name="label_save">Save</string>
+    <string name="hint_name_surname">Name surname</string>
 </resources>

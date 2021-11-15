@@ -1,16 +1,8 @@
 package com.emreyasar.eylock.eventlist
 
-class EventListPresenter(view: EventListContract.View) : EventListContract.Presenter {
+import javax.inject.Inject
 
-    private var view: EventListContract.View? = view
-
-    override fun onViewCreated() {
-        // do nothing
-    }
-
-    override fun onDestroy() {
-        this.view = null
-    }
+class EventListPresenter<V: EventListContract.View> @Inject internal constructor() : EventListContract.Presenter<V>() {
 
 
 }

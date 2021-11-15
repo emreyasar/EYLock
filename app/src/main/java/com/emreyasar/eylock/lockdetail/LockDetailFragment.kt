@@ -8,17 +8,20 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.emreyasar.eylock.R
 import com.emreyasar.eylock.databinding.FragmentLockDetailBinding
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class LockDetailFragment: Fragment(), LockDetailContract.View {
 
-    private lateinit var presenter: LockDetailContract.Presenter
+    @Inject
+    internal lateinit var presenter: LockDetailContract.Presenter<LockDetailContract.View>
 
     private var _binding: FragmentLockDetailBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setPresenter(LockDetailPresenter(this))
     }
 
     override fun onCreateView(
@@ -26,7 +29,6 @@ class LockDetailFragment: Fragment(), LockDetailContract.View {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        presenter.onViewCreated()
         _binding = FragmentLockDetailBinding.inflate(inflater, container, false)
 
         binding.lockDetailShowEventListButton.setOnClickListener { view: View ->
@@ -40,14 +42,5 @@ class LockDetailFragment: Fragment(), LockDetailContract.View {
         presenter.onDestroy()
         super.onDestroy()
     }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-    }
-
-    override fun setPresenter(presenter: LockDetailContract.Presenter) {
-        this.presenter = presenter
-    }
-
 
 }

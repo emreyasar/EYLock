@@ -11,5 +11,7 @@ data class UserEntity (
 
     var name: String = "",
 
+    var email: String = "",
+
     var createdDate: Long = System.currentTimeMillis()
 )
