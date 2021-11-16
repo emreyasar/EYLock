@@ -1,4 +1,4 @@
-package com.emreyasar.eylock.dashboard
+package com.emreyasar.eylock.dashboard.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emreyasar.eylock.R
+import com.emreyasar.eylock.dashboard.DashboardContract
+import com.emreyasar.eylock.dashboard.view.adapter.LockListRecyclerViewAdapter
 import com.emreyasar.eylock.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject

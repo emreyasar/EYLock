@@ -1,4 +1,4 @@
-package com.emreyasar.eylock.login
+package com.emreyasar.eylock.login.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.emreyasar.eylock.R
 import com.emreyasar.eylock.databinding.FragmentLoginBinding
+import com.emreyasar.eylock.extensions.isEmailValid
+import com.emreyasar.eylock.login.LoginContract
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -34,8 +36,10 @@ class LoginFragment: Fragment(), LoginContract.View {
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
         binding.fragmentLoginButton.setOnClickListener { view: View ->
-            if (binding.fragmentLoginEmailInput.text.toString().isEmpty() || binding.fragmentLoginPasswordInput.text.toString().isEmpty()) {
-                Toast.makeText(context, "Please fill the all required fields" , Toast.LENGTH_SHORT).show()
+            if (binding.fragmentLoginEmailInput.text.toString().isEmpty() ||
+                binding.fragmentLoginPasswordInput.text.toString().isEmpty() ||
+                !binding.fragmentLoginEmailInput.text.toString().isEmailValid()) {
+                Toast.makeText(context, "Please check the fields" , Toast.LENGTH_SHORT).show()
             } else {
                 view.findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
             }

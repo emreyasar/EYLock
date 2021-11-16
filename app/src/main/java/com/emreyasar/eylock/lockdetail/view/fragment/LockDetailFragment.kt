@@ -1,4 +1,4 @@
-package com.emreyasar.eylock.lockdetail
+package com.emreyasar.eylock.lockdetail.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.emreyasar.eylock.R
 import com.emreyasar.eylock.databinding.FragmentLockDetailBinding
+import com.emreyasar.eylock.lockdetail.LockDetailContract
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -20,8 +21,9 @@ class LockDetailFragment: Fragment(), LockDetailContract.View {
     private var _binding: FragmentLockDetailBinding? = null
     private val binding get() = _binding!!
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        presenter.onViewCreated(this)
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onCreateView(

@@ -1,7 +1,8 @@
-package com.emreyasar.eylock.eventlist
+package com.emreyasar.eylock.eventlist.view.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.emreyasar.eylock.eventlist.EventListContract
 
 class EventListRecyclerViewAdapter(val presenter: EventListContract.Presenter<EventListContract.View>) :
     RecyclerView.Adapter<EventListRecyclerViewHolder>() {

@@ -1,7 +1,7 @@
 package com.emreyasar.eylock.eventlist
 
-import com.emreyasar.eylock.BasePresenter
-import com.emreyasar.eylock.BaseView
+import com.emreyasar.eylock.base.BasePresenter
+import com.emreyasar.eylock.base.BaseView
 
 interface EventListContract {
 

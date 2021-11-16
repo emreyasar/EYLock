@@ -10,8 +10,8 @@ class AdminNewUserPresenter<V: AdminContract.View> @Inject internal constructor(
 
     override fun addNewUser(name: String, email: String) {
         GlobalScope.launch {
-            userRepository.insertUser(email, name)
+            val result = userRepository.insertUser(email, name)
+            getView()?.newUserAdded(result)
         }
-        getView()?.newUserAdded(true)
     }
 }

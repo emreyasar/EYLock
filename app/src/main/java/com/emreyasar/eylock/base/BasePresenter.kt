@@ -1,4 +1,4 @@
-package com.emreyasar.eylock
+package com.emreyasar.eylock.base
 
 abstract class BasePresenter<V: BaseView> : BaseMVPPresenter<V> {
 

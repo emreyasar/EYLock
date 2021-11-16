@@ -1,4 +1,4 @@
-package com.emreyasar.eylock.eventlist
+package com.emreyasar.eylock.eventlist.view.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,10 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.emreyasar.eylock.R
-import com.emreyasar.eylock.dashboard.LockListRecyclerViewAdapter
 import com.emreyasar.eylock.databinding.FragmentEventListBinding
-import com.emreyasar.eylock.databinding.FragmentLockDetailBinding
+import com.emreyasar.eylock.eventlist.EventListContract
+import com.emreyasar.eylock.eventlist.view.adapter.EventListRecyclerViewAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 

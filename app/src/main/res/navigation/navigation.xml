@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.emreyasar.eylock.login.LoginFragment"
+        android:name="com.emreyasar.eylock.login.view.fragment.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
@@ -23,7 +23,7 @@
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.emreyasar.eylock.dashboard.DashboardFragment"
+        android:name="com.emreyasar.eylock.dashboard.view.fragment.DashboardFragment"
         android:label="DashboardFragment"
         tools:layout="@layout/fragment_dashboard" >
         <action
@@ -32,7 +32,7 @@
     </fragment>
     <fragment
         android:id="@+id/lockDetailFragment"
-        android:name="com.emreyasar.eylock.lockdetail.LockDetailFragment"
+        android:name="com.emreyasar.eylock.lockdetail.view.fragment.LockDetailFragment"
         android:label="LockDetailFragment"
         tools:layout="@layout/fragment_lock_detail" >
         <action
@@ -41,7 +41,7 @@
     </fragment>
     <fragment
         android:id="@+id/eventListFragment"
-        android:name="com.emreyasar.eylock.eventlist.EventListFragment"
+        android:name="com.emreyasar.eylock.eventlist.view.fragment.EventListFragment"
         android:label="EventListFragment"
         tools:layout="@layout/fragment_event_list" />
     <fragment

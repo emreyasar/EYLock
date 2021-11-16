@@ -13,6 +13,7 @@ import com.emreyasar.eylock.admin.AdminContract
 import com.emreyasar.eylock.admin.presenter.AdminNewUserPresenter
 import com.emreyasar.eylock.database.repository.UserRepository
 import com.emreyasar.eylock.databinding.FragmentAddNewUserBinding
+import com.emreyasar.eylock.extensions.isEmailValid
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -38,8 +39,10 @@ class AddNewUserFragment: Fragment(), AdminContract.View {
         _binding = FragmentAddNewUserBinding.inflate(inflater, container, false)
 
         binding.fragmentNewUserButton.setOnClickListener {
-            if (binding.fragmentNewUserEmailInput.text.toString().isEmpty() || binding.fragmentNewUserNameInput.text.toString().isEmpty()) {
-                Toast.makeText(context, "Please fill the all required fields" , Toast.LENGTH_SHORT).show()
+            if (binding.fragmentNewUserEmailInput.text.toString().isEmpty() ||
+                binding.fragmentNewUserNameInput.text.toString().isEmpty() ||
+                !binding.fragmentNewUserEmailInput.text.toString().isEmailValid()) {
+                Toast.makeText(context, "Please check the fields" , Toast.LENGTH_SHORT).show()
             } else {
                 presenter.addNewUser(binding.fragmentNewUserNameInput.text.toString(), binding.fragmentNewUserEmailInput.text.toString())
             }

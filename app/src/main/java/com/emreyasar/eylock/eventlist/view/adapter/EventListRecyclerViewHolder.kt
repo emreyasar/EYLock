@@ -1,4 +1,4 @@
-package com.emreyasar.eylock.eventlist
+package com.emreyasar.eylock.eventlist.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

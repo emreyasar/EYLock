@@ -1,4 +1,4 @@
-package com.emreyasar.eylock
+package com.emreyasar.eylock.base
 
 import androidx.recyclerview.widget.RecyclerView
 

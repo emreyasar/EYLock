@@ -1,4 +1,4 @@
-package com.emreyasar.eylock.dashboard
+package com.emreyasar.eylock.dashboard.view.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

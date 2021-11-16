@@ -1,7 +1,8 @@
-package com.emreyasar.eylock.dashboard
+package com.emreyasar.eylock.dashboard.view.adapter
 
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.emreyasar.eylock.dashboard.DashboardContract
 
 class LockListRecyclerViewAdapter(val presenter: DashboardContract.Presenter<DashboardContract.View>) :
     RecyclerView.Adapter<LockListRecyclerViewHolder>() {
