@@ -16,7 +16,7 @@ data class UserWithLocks(
     @Relation(
         parentColumn = "userId",
         entityColumn = "lockId",
-        associateBy = Junction(LockUserEntity::class)
+        associateBy = Junction(LockUserEntity::class, parentColumn = "userId", entityColumn = "lockId")
     )
     val locks: List<LockEntity>
 )

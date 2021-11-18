@@ -6,18 +6,23 @@ import androidx.room.Query
 import androidx.room.Transaction
 import com.emreyasar.eylock.database.entity.UserEntity
 import com.emreyasar.eylock.database.entity.UserWithLocks
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface UserDAO {
 
     @Insert
-    fun insert(user: UserEntity)
+    suspend fun insert(user: UserEntity)
 
-    @Query("SELECT * FROM eylock_user WHERE userId = :id")
-    fun getById(id: Long) : UserEntity?
+    @Query("SELECT * FROM eylock_user WHERE email = :mail")
+    suspend fun getByMail(mail: String) : UserEntity?
+
+
+    @Query("SELECT * FROM eylock_user ORDER BY createdDate DESC")
+    fun getUserList() : Flow<List<UserEntity>>
 
     @Transaction
     @Query("SELECT * FROM eylock_user WHERE userId = :userId")
-    fun getUserWithLocks(userId: Long): List<UserWithLocks>
+    fun getUserWithLocks(userId: Long): UserWithLocks
 
 }

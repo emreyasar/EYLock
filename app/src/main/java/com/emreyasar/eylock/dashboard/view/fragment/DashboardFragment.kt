@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.emreyasar.eylock.R
+import com.emreyasar.eylock.base.DataStatus
 import com.emreyasar.eylock.dashboard.DashboardContract
 import com.emreyasar.eylock.dashboard.view.adapter.LockListRecyclerViewAdapter
+import com.emreyasar.eylock.database.entity.LockEntity
 import com.emreyasar.eylock.databinding.FragmentDashboardBinding
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -26,8 +28,9 @@ class DashboardFragment: Fragment(), DashboardContract.View {
     @Inject
     internal lateinit var presenter: DashboardContract.Presenter<DashboardContract.View>
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        presenter.onViewCreated(this)
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onCreateView(
@@ -43,6 +46,10 @@ class DashboardFragment: Fragment(), DashboardContract.View {
         binding.fragmentDashboardLockList.adapter = adapter
 
         return binding.root
+    }
+
+    override fun lockListFetched() {
+        adapter.dataStatus = DataStatus.READY
     }
 
     override fun onLockItemClicked() {

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.emreyasar.eylock.EYLockContext
 import com.emreyasar.eylock.R
 import com.emreyasar.eylock.databinding.FragmentLoginBinding
 import com.emreyasar.eylock.extensions.isEmailValid
@@ -41,7 +42,7 @@ class LoginFragment: Fragment(), LoginContract.View {
                 !binding.fragmentLoginEmailInput.text.toString().isEmailValid()) {
                 Toast.makeText(context, "Please check the fields" , Toast.LENGTH_SHORT).show()
             } else {
-                view.findNavController().navigate(R.id.action_loginFragment_to_dashboardFragment)
+                presenter.login(binding.fragmentLoginEmailInput.text.toString(), binding.fragmentLoginPasswordInput.text.toString())
             }
         }
 
@@ -50,6 +51,15 @@ class LoginFragment: Fragment(), LoginContract.View {
         }
 
         return binding.root
+    }
+
+    override fun loginCompleted(result: Boolean, userId: Long?) {
+        if (result) {
+            EYLockContext.loginUserId = userId
+            view?.findNavController()?.navigate(R.id.action_loginFragment_to_dashboardFragment)
+        } else {
+            Toast.makeText(context, "Incorrect username/password" , Toast.LENGTH_SHORT).show()
+        }
     }
 
     override fun onDestroy() {
