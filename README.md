@@ -12,10 +12,10 @@
 
 Predefined Users: 
 
-user1@eylock.com
-user2@eylock.com
-user3@eylock.com
-user4@eylock.com
-user5@eylock.com
+- user1@eylock.com
+- user2@eylock.com
+- user3@eylock.com
+- user4@eylock.com
+- user5@eylock.com
 
 **User Passwords : 123456** 
