@@ -2,6 +2,13 @@
 
 ## Video Link : https://youtu.be/JfsFKS6zRmo
 
+## Installation
+
+After clone the repo to your local or download it as a zip, you can open the project by clicking the Open button in Android Studio.
+Or you can download it by clicking the Get from VCS button in Android Studio and type the URL of this repo on the screen that opens.
+
+It does not require any additional installation or configuration. It can be run after a successful Gradle build.
+
 ## Description : 
 
 - Lock 1 -> User 1, User 2, User 3, User 4, User 5
