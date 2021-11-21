@@ -33,7 +33,9 @@ class AppModule {
             appContext,
             AppDatabase::class.java,
             "EYLOCK"
-        ).build()
+        )
+            .createFromAsset("EYLOCK.db")
+            .build()
     }
 
     @Provides

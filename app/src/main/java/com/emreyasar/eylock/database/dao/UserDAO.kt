@@ -19,7 +19,7 @@ interface UserDAO {
 
 
     @Query("SELECT * FROM eylock_user ORDER BY createdDate DESC")
-    fun getUserList() : Flow<List<UserEntity>>
+    fun getUserList() : List<UserEntity>
 
     @Transaction
     @Query("SELECT * FROM eylock_user WHERE userId = :userId")

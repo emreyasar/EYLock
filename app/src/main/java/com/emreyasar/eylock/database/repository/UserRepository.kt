@@ -8,7 +8,7 @@ interface UserRepository {
 
     suspend fun insertUser(email: String, name: String): Boolean
 
-    fun getUserList(): Flow<List<UserEntity>>
+    fun getUserList(): List<UserEntity>
 
     suspend fun getUserByMail(mail: String): UserEntity?
 

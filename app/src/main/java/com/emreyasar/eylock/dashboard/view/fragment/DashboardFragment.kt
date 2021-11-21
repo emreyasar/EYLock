@@ -50,6 +50,7 @@ class DashboardFragment: Fragment(), DashboardContract.View {
 
     override fun lockListFetched() {
         adapter.dataStatus = DataStatus.READY
+        adapter.notifyDataSetChanged()
     }
 
     override fun onLockItemClicked() {

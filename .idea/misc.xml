@@ -6,6 +6,8 @@
         <entry key="../../../../../layout/custom_preview.xml" value="0.36354166666666665" />
         <entry key="app/src/main/res/drawable/ic_lock_icon.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/drawable/ic_lock_open_icon.xml" value="0.3645833333333333" />
+        <entry key="app/src/main/res/drawable/ic_male_avatar.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/shape_circle.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/shape_login_bg.xml" value="0.3645833333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_add_new_user.xml" value="0.2328125" />

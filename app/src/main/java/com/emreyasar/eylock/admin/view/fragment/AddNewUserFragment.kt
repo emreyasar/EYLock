@@ -10,8 +10,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.emreyasar.eylock.admin.AdminContract
-import com.emreyasar.eylock.admin.presenter.AdminNewUserPresenter
-import com.emreyasar.eylock.database.repository.UserRepository
 import com.emreyasar.eylock.databinding.FragmentAddNewUserBinding
 import com.emreyasar.eylock.extensions.isEmailValid
 import dagger.hilt.android.AndroidEntryPoint

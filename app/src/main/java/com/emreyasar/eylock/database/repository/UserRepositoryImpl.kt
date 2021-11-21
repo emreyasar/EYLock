@@ -18,7 +18,7 @@ class UserRepositoryImpl @Inject internal constructor(private val userDao: UserD
         }
     }
 
-    override fun getUserList(): Flow<List<UserEntity>> {
+    override fun getUserList(): List<UserEntity> {
         return userDao.getUserList()
     }
 
